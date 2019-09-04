@@ -19,3 +19,39 @@ function jsGuess() {
 document.onkeyup = function (event) {
     var playerGuess = event.key;
 
+    // CORRECT GUESSES 
+    if (playerGuess === ranLetter) {
+        won++;
+        attempts = 10;
+        usedArray = [];
+
+    }
+
+    //INCORRECT GUESSES
+    jsGuess();
+    if (playerGuess !== ranLetter) {
+        attempts--;
+
+    }
+
+    if (attempts == 0) {
+        lost++;
+        usedArray = []
+        attempts = 10;
+    }
+
+    //INCORRECT GUESSES - OUTPUT
+    if (usedArray.indexOf(playerGuess) >= 0) {
+
+    } else {
+        usedArray.push(playerGuess);
+        document.getElementById('playerGuess').innerHTML = usedArray;
+        console.log(usedArray);
+
+    }
+    //OUTPUT TO HTML
+    document.getElementById('won').innerHTML = won;
+    document.getElementById('lost').innerHTML = lost;
+    document.getElementById('attempts').innerHTML = attempts;
+
+}
