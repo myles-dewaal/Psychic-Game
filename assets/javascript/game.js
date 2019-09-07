@@ -21,6 +21,7 @@ document.onkeyup = function (event) {
 
     // CORRECT GUESSES 
     if (playerGuess === ranLetter) {
+        jsGuess();
         won++;
         attempts = 15;
         usedArray = [];
@@ -28,13 +29,13 @@ document.onkeyup = function (event) {
     }
 
     //INCORRECT GUESSES
-    jsGuess();
     if (playerGuess !== ranLetter) {
         attempts--;
 
     }
 
     if (attempts == 0) {
+        jsGuess();
         lost++;
         usedArray = []
         attempts = 15;
