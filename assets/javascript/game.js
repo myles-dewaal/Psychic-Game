@@ -1,7 +1,7 @@
 //Variables
 var won = 0;
 var lost = 0;
-var attempts = 15;
+var attempts = 10;
 var usedArray = [];
 var ranLetter = ranLetter;
 var letters = "abcdefghijklmnopqrstuvwxyz"
@@ -23,7 +23,7 @@ document.onkeyup = function (event) {
     if (playerGuess === ranLetter) {
         jsGuess();
         won++;
-        attempts = 15;
+        attempts = 10;
         usedArray = [];
 
     }
@@ -38,7 +38,7 @@ document.onkeyup = function (event) {
         jsGuess();
         lost++;
         usedArray = []
-        attempts = 15;
+        attempts = 10;
     }
 
     //INCORRECT GUESSES - OUTPUT
